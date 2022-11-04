@@ -7,6 +7,8 @@ class ShortUrlsController < ApplicationController
   end
 
   def create
+      url = ShortUrl.create( full_url: params[:full_url] )
+      render status: 201, json: { short_code: url }
   end
 
   def show
