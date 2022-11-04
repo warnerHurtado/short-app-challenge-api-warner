@@ -4,8 +4,6 @@ class ShortUrlsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    url = ShortUrl.all
-    render json: { test: url }
   end
 
   def create
@@ -14,7 +12,7 @@ class ShortUrlsController < ApplicationController
       render status: 200, json: { short_code: url.short_code } 
     else
       url = ShortUrl.create( full_url: params[:full_url] )
-
+      UpdateTitleJob.perform_now( url.id )
       render status: 201, json: { short_code: url.short_code }
     end
   end

@@ -1037,3 +1037,104 @@ Processing by ShortUrlsController#index as HTML
 Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 2062)
 
 
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 23:12:02 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (10.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google6.com"}
+  [1m[36mShortUrl Load (13.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google6.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 200 OK in 41ms (Views: 2.9ms | ActiveRecord: 13.8ms | Allocations: 6345)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 23:12:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google6.com"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google6.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 921)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 23:13:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google7.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google7.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:16:in `create'
+  [1m[36mShortUrl Create (3.8ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://google7.com', '2022-11-04 23:13:10.121299', '2022-11-04 23:13:10.121299')[0m
+  ↳ app/controllers/short_urls_controller.rb:16:in `create'
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:16:in `create'
+[ActiveJob] [UpdateTitleJob] [95c10cf1-fb22-484f-b0d3-31367850a5b7] Performing UpdateTitleJob (Job ID: 95c10cf1-fb22-484f-b0d3-31367850a5b7) from Resque(default) enqueued at  with arguments: 8
+[ActiveJob] [UpdateTitleJob] [95c10cf1-fb22-484f-b0d3-31367850a5b7]   [1m[36mShortUrl Load (1.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 8 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [95c10cf1-fb22-484f-b0d3-31367850a5b7]   ↳ app/jobs/update_title_job.rb:5:in `perform'
+[ActiveJob] [UpdateTitleJob] [95c10cf1-fb22-484f-b0d3-31367850a5b7] Performed UpdateTitleJob (Job ID: 95c10cf1-fb22-484f-b0d3-31367850a5b7) from Resque(default) in 5.26ms
+  [1m[36mShortUrl Load (0.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/models/short_url.rb:8:in `short_code'
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google7.com' LIMIT 1[0m
+  ↳ app/models/short_url.rb:15:in `short_code'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:17:in `short_code'
+  [1m[36mShortUrl Update (1.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`url_code` = '8', `short_urls`.`updated_at` = '2022-11-04 23:13:10.448977' WHERE `short_urls`.`id` = 8[0m
+  ↳ app/models/short_url.rb:17:in `short_code'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:17:in `short_code'
+Completed 201 Created in 370ms (Views: 0.4ms | ActiveRecord: 33.1ms | Allocations: 22302)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 23:23:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google7.com"}
+  [1m[36mShortUrl Load (1.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google7.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/models/short_url.rb:8:in `short_code'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 7057)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 23:23:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google8.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google8.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:16:in `create'
+  [1m[36mShortUrl Create (0.7ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://google8.com', '2022-11-04 23:23:35.865757', '2022-11-04 23:23:35.865757')[0m
+  ↳ app/controllers/short_urls_controller.rb:16:in `create'
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:16:in `create'
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44] Performing UpdateTitleJob (Job ID: f623bd34-8b8b-4e7b-808d-c47e2728bf44) from Resque(default) enqueued at  with arguments: 9
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 9 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   ↳ app/jobs/update_title_job.rb:5:in `perform'
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   ↳ app/models/short_url.rb:25:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   [1m[36mShortUrl Update (0.8ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'google8.com', `short_urls`.`updated_at` = '2022-11-04 23:23:35.892486' WHERE `short_urls`.`id` = 9[0m
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   ↳ app/models/short_url.rb:25:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44]   ↳ app/models/short_url.rb:25:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [f623bd34-8b8b-4e7b-808d-c47e2728bf44] Performed UpdateTitleJob (Job ID: f623bd34-8b8b-4e7b-808d-c47e2728bf44) from Resque(default) in 9.64ms
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/models/short_url.rb:8:in `short_code'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:18:in `short_code'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-04 23:23:35.914286', `short_urls`.`url_code` = '9' WHERE `short_urls`.`id` = 9[0m
+  ↳ app/models/short_url.rb:18:in `short_code'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:18:in `short_code'
+Completed 201 Created in 59ms (Views: 0.2ms | ActiveRecord: 26.3ms | Allocations: 9811)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-04 23:24:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 2333)
+
+
