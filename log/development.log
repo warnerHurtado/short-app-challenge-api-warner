@@ -252,3 +252,53 @@ Processing by ShortUrlsController#create as JSON
 Completed 201 Created in 18ms (Views: 0.6ms | ActiveRecord: 6.2ms | Allocations: 7101)
 
 
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 22:06:30 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.0ms | Allocations: 96056)
+
+
+  
+NameError (undefined local variable or method `param' for #<ShortUrlsController:0x00007f6f190a9440>
+Did you mean?  params
+               params=):
+  
+app/controllers/short_urls_controller.rb:10:in `create'
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 22:07:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (3.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:10:in `create'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 6228)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 22:07:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:10:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 5581)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 22:07:40 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:10:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 5626)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-04 22:07:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:10:in `create'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1012)
+
+
