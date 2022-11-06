@@ -8,12 +8,18 @@ class ShortUrlsController < ApplicationController
 
   def create
     url = ShortUrl.find_by( full_url: params[:full_url] )
+
     if url
       render status: 200, json: { short_code: url.short_code } 
     else
       url = ShortUrl.create( full_url: params[:full_url] )
-      UpdateTitleJob.perform_now( url.id )
-      render status: 201, json: { short_code: url.short_code }
+
+      if url.save
+        UpdateTitleJob.perform_now( url.id )
+        render status: 201, json: { short_code: url.short_code }
+      else
+        render status: 400, json: { errors: url.errors}
+      end
     end
   end
 
