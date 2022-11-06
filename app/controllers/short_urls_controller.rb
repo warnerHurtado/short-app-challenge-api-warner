@@ -4,6 +4,7 @@ class ShortUrlsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    render status: 200, json: { urls: ShortUrl.all }
   end
 
   def create
@@ -24,6 +25,16 @@ class ShortUrlsController < ApplicationController
   end
 
   def show
+    url_code = ShortUrl.find_by( url_code: params[:id] )
+    
+    if url_code
+      clicks_count = url_code.click_count + 1
+      url_code.update_attributes( :click_count => clicks_count )
+      
+      redirect_to url_code.full_url, allow_other_host: true
+    else
+      render status: 404, json: { errors: "Do not exist an URL with that code."}
+    end
   end
 
 end
