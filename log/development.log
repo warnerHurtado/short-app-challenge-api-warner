@@ -2207,3 +2207,456 @@ Processing by ShortUrlsController#index as HTML
 Completed 200 OK in 15ms (Views: 9.8ms | ActiveRecord: 3.1ms | Allocations: 8620)
 
 
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:02:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` IN (NULL, NULL)[0m
+  ↳ app/controllers/short_urls_controller.rb:7:in `index'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms | Allocations: 4052)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all ShortUrls with 'id': (all, {:order=>"click_count desc", :limit=>100}) (found 0 results, but was looking for 2).):
+  
+app/controllers/short_urls_controller.rb:7:in `index'
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:04:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:9:in `index'
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 3.0ms | Allocations: 8658)
+
+
+Started HEAD "/d" for 172.20.0.1 at 2022-11-06 22:07:22 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as */*
+  Parameters: {"id"=>"d"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'd' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:30:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:34)
+Redirected to http://localhost:3000htgle8om
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1849)
+
+
+Started GET "/d" for 172.20.0.1 at 2022-11-06 22:07:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"d"}
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'd' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:30:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:34)
+Redirected to http://localhost:3000htgle8om
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 1831)
+
+
+Started GET "/d" for 172.20.0.1 at 2022-11-06 22:07:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"d"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'd' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:30:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:34)
+Redirected to http://localhost:3000htgle8om
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1831)
+
+
+Started HEAD "/h" for 172.20.0.1 at 2022-11-06 22:07:47 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as */*
+  Parameters: {"id"=>"h"}
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'h' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:30:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:34)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:34:in `show'
+  [1m[36mShortUrl Update (1.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 2, `short_urls`.`updated_at` = '2022-11-06 22:07:47.339284' WHERE `short_urls`.`id` = 1[0m
+  ↳ app/controllers/short_urls_controller.rb:34:in `show'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:34:in `show'
+Redirected to https://google.com
+Completed 302 Found in 20ms (ActiveRecord: 4.1ms | Allocations: 3463)
+
+
+Started GET "/h" for 172.20.0.1 at 2022-11-06 22:07:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"h"}
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'h' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:30:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:34)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:34:in `show'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 3, `short_urls`.`updated_at` = '2022-11-06 22:07:56.823857' WHERE `short_urls`.`id` = 1[0m
+  ↳ app/controllers/short_urls_controller.rb:34:in `show'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:34:in `show'
+Redirected to https://google.com
+Completed 302 Found in 15ms (ActiveRecord: 4.3ms | Allocations: 3601)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:08:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.8ms | Allocations: 3500)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:08:47 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.facebook.com/"}
+  [1m[36mShortUrl Load (1.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.facebook.com/' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:13:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:18:in `create'
+  [1m[36mShortUrl Create (2.8ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.facebook.com/', '2022-11-06 22:08:47.019755', '2022-11-06 22:08:47.019755')[0m
+  ↳ app/controllers/short_urls_controller.rb:18:in `create'
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:18:in `create'
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b] Performing UpdateTitleJob (Job ID: 3e35d69a-35b1-4ab3-93f4-16d988a5872b) from Resque(default) enqueued at  with arguments: 18
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 18 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   ↳ app/jobs/update_title_job.rb:5:in `perform'
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   ↳ app/models/short_url.rb:25:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   [1m[36mShortUrl Update (1.2ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.facebook.com', `short_urls`.`updated_at` = '2022-11-06 22:08:47.101767' WHERE `short_urls`.`id` = 18[0m
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   ↳ app/models/short_url.rb:25:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b]   ↳ app/models/short_url.rb:25:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [3e35d69a-35b1-4ab3-93f4-16d988a5872b] Performed UpdateTitleJob (Job ID: 3e35d69a-35b1-4ab3-93f4-16d988a5872b) from Resque(default) in 11.29ms
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/models/short_url.rb:8:in `short_code'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:18:in `short_code'
+  [1m[36mShortUrl Update (1.8ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:08:47.113646', `short_urls`.`url_code` = 'i' WHERE `short_urls`.`id` = 18[0m
+  ↳ app/models/short_url.rb:18:in `short_code'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:18:in `short_code'
+Completed 201 Created in 111ms (Views: 0.4ms | ActiveRecord: 21.6ms | Allocations: 17995)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 3.1ms | Allocations: 8764)
+
+
+Started GET "/i" for 172.20.0.1 at 2022-11-06 22:09:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"i"}
+  [1m[36mShortUrl Load (0.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'i' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:29:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:33)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:09:17.801545' WHERE `short_urls`.`id` = 18[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+Redirected to https://www.facebook.com/
+Completed 302 Found in 29ms (ActiveRecord: 3.7ms | Allocations: 3734)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.7ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.7ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.0ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 3642)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:09:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 3642)
+
+
+Started GET "/i" for 172.20.0.1 at 2022-11-06 22:10:03 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"i"}
+  [1m[36mShortUrl Load (1.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'i' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:29:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:33)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 2, `short_urls`.`updated_at` = '2022-11-06 22:10:03.868430' WHERE `short_urls`.`id` = 18[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+Redirected to https://www.facebook.com/
+Completed 302 Found in 14ms (ActiveRecord: 5.6ms | Allocations: 3600)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:10:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 3642)
+
+
+Started HEAD "/i" for 172.20.0.1 at 2022-11-06 22:12:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as */*
+  Parameters: {"id"=>"i"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'i' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:29:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:33)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 3, `short_urls`.`updated_at` = '2022-11-06 22:12:51.197266' WHERE `short_urls`.`id` = 18[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+Redirected to https://www.facebook.com/
+Completed 302 Found in 18ms (ActiveRecord: 5.5ms | Allocations: 8754)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:12:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.7ms | Allocations: 3751)
+
+
+Started HEAD "/i" for 172.20.0.1 at 2022-11-06 22:13:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as */*
+  Parameters: {"id"=>"i"}
+  [1m[36mShortUrl Load (1.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'i' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:29:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:33)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 4, `short_urls`.`updated_at` = '2022-11-06 22:13:13.536534' WHERE `short_urls`.`id` = 18[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:33:in `show'
+Redirected to https://www.facebook.com/
+Completed 302 Found in 16ms (ActiveRecord: 6.7ms | Allocations: 3449)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:13:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms | Allocations: 3671)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 3.6ms | Allocations: 8723)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 8.7ms | ActiveRecord: 3.5ms | Allocations: 8687)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 3535)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.9ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.3ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.0ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.9ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 1.3ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.8ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:53 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 1.0ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 1.0ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.8ms | Allocations: 3534)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:15:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 3536)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:16:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY `short_urls`.`click_count` DESC LIMIT 5[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 2.8ms | Allocations: 6945)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:16:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 3.8ms | Allocations: 8673)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:16:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 5[0m
+  ↳ app/controllers/short_urls_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 2.6ms | Allocations: 6890)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:17:04 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 5[0m
+  ↳ app/controllers/short_urls_controller.rb:9:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 1896)
+
+

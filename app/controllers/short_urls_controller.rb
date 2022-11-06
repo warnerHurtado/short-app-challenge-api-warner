@@ -4,7 +4,8 @@ class ShortUrlsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render status: 200, json: { urls: ShortUrl.all }
+    urls = ShortUrl.limit( 5 ).order('click_count desc')
+    render status: 200, json: { urls: [urls] }
   end
 
   def create
@@ -30,7 +31,7 @@ class ShortUrlsController < ApplicationController
     if url_code
       clicks_count = url_code.click_count + 1
       url_code.update_attributes( :click_count => clicks_count )
-      
+
       redirect_to url_code.full_url, allow_other_host: true
     else
       render status: 404, json: { errors: "Do not exist an URL with that code."}
