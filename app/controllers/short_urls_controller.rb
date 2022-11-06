@@ -20,7 +20,7 @@ class ShortUrlsController < ApplicationController
         UpdateTitleJob.perform_now( url.id )
         render status: 201, json: { short_code: url.short_code }
       else
-        render status: 400, json: { errors: url.errors}
+        render status: 400, json: url.errors
       end
     end
   end

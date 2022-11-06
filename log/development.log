@@ -2660,3 +2660,107 @@ Processing by ShortUrlsController#index as HTML
 Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 1896)
 
 
+Started HEAD "/" for 172.20.0.1 at 2022-11-06 22:36:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#index as */*
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 3979)
+
+
+  
+NoMethodError (undefined method `public_attributes' for #<Class:0x000055bf94dfd708>
+Did you mean?  public_constant):
+  
+app/controllers/short_urls_controller.rb:7:in `index'
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:36:21 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2936)
+
+
+  
+NoMethodError (undefined method `public_attributes' for #<Class:0x000055bf94dfd708>
+Did you mean?  public_constant):
+  
+app/controllers/short_urls_controller.rb:7:in `index'
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:47:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.1ms | Allocations: 8999)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-06 22:47:33 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 3.4ms | Allocations: 8714)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:50:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 400 Bad Request in 13ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 8368)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:51:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.5ms | Allocations: 9262)
+
+
+  
+NoMethodError (undefined method `full_url' for #<ActiveModel::Errors:0x000055bf952d82f0>):
+  
+app/controllers/short_urls_controller.rb:23:in `create'
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:52:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 400 Bad Request in 12ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 8522)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:52:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.2ms | Allocations: 9268)
+
+
+  
+NoMethodError (undefined method `errors' for #<ActiveModel::Errors:0x00007fb6f81ad5e0>):
+  
+app/controllers/short_urls_controller.rb:23:in `create'
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:53:40 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 400 Bad Request in 13ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 8384)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:54:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 400 Bad Request in 12ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 8333)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-06 22:55:47 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` IS NULL LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:12:in `create'
+Completed 400 Bad Request in 31ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 8474)
+
+

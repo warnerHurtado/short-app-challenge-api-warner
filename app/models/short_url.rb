@@ -38,7 +38,7 @@ class ShortUrl < ApplicationRecord
     is_correct_url = is_valid_url?
     
     if !is_correct_url
-      errors.add(:full_url, message: "Full url is not a valid url")
+      errors.add( :full_url, "is not a valid url" )
     end
   end
 

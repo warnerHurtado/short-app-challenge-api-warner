@@ -265,3 +265,1326 @@ Completed 204 No Content in 9ms (ActiveRecord: 0.0ms | Allocations: 1428)
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '02cc98f8276f8fb30c31cefd8ee4a711578852bc', '2022-11-04 21:40:51.167530', '2022-11-04 21:40:51.167530')[0m
   [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (84.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `short_test`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `short_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (58.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `short_urls` CASCADE[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE `short_urls` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `full_url` varchar(255), `title` varchar(255), `click_count` int DEFAULT 0, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `url_code` varchar(255),  INDEX `index_short_urls_on_full_url`  (`full_url`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4[0m
+  [1m[35m (60.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20221104222226)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20190923133432);
+
+[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2022-11-06 22:24:04.616948', '2022-11-06 22:24:04.616948')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '10e96e80eca615ae5e520a042205555f16b33127', '2022-11-06 22:24:04.622308', '2022-11-06 22:24:04.622308')[0m
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:24:04.763438', '2022-11-06 22:24:04.763438')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 5[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1155)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:24:04.775985', '2022-11-06 22:24:04.775985')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 5[0m
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 410)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:24:04.789402', '2022-11-06 22:24:04.789402')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [dea61151-45e4-4592-90c0-2edd8943fbfe] Performing UpdateTitleJob (Job ID: dea61151-45e4-4592-90c0-2edd8943fbfe) from Resque(default) enqueued at  with arguments: 3
+[ActiveJob] [UpdateTitleJob] [dea61151-45e4-4592-90c0-2edd8943fbfe]   [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 3 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [dea61151-45e4-4592-90c0-2edd8943fbfe]   [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [dea61151-45e4-4592-90c0-2edd8943fbfe]   [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:24:04.793819' WHERE `short_urls`.`id` = 3[0m
+[ActiveJob] [UpdateTitleJob] [dea61151-45e4-4592-90c0-2edd8943fbfe]   [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [dea61151-45e4-4592-90c0-2edd8943fbfe] Performed UpdateTitleJob (Job ID: dea61151-45e4-4592-90c0-2edd8943fbfe) from Resque(default) in 5.03ms
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:04.798249', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 3[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 13ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 2199)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 625)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:24:04.902015', '2022-11-06 22:24:04.902015')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:04.907916', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 4[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (1.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (1.0ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:24:04.915807' WHERE `short_urls`.`id` = 4[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 7ms (ActiveRecord: 3.6ms | Allocations: 839)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:24:04.925368', '2022-11-06 22:24:04.925368')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 242)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:24:04.936324', '2022-11-06 22:24:04.936324')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 6 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:04.950154', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:24:04.956047' WHERE `short_urls`.`id` = 6[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 6 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:04.968430', '2022-11-06 22:24:04.968430')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 37a0b4a7-a02e-4491-ad48-b5780d42c254) to Test(default) with arguments: 7
+[ActiveJob] [UpdateTitleJob] [37a0b4a7-a02e-4491-ad48-b5780d42c254] Performing UpdateTitleJob (Job ID: 37a0b4a7-a02e-4491-ad48-b5780d42c254) from Test(default) enqueued at 2022-11-06T22:24:04Z with arguments: 7
+[ActiveJob] [UpdateTitleJob] [37a0b4a7-a02e-4491-ad48-b5780d42c254]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 7 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [37a0b4a7-a02e-4491-ad48-b5780d42c254]   [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [37a0b4a7-a02e-4491-ad48-b5780d42c254]   [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:24:04.977684' WHERE `short_urls`.`id` = 7[0m
+[ActiveJob] [UpdateTitleJob] [37a0b4a7-a02e-4491-ad48-b5780d42c254]   [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [37a0b4a7-a02e-4491-ad48-b5780d42c254] Performed UpdateTitleJob (Job ID: 37a0b4a7-a02e-4491-ad48-b5780d42c254) from Test(default) in 10.13ms
+  [1m[36mShortUrl Load (1.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:04.987377', '2022-11-06 22:24:04.987377')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:04.990667', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:05.006875', '2022-11-06 22:24:05.006875')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:05.012321', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 9[0m
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:05.019380', '2022-11-06 22:24:05.019380')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:05.024200', '2022-11-06 22:24:05.024200')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:24:05.027194' WHERE `short_urls`.`id` = 11[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:05.035548', '2022-11-06 22:24:05.035548')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 12[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:05.039822', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:24:05.043722', '2022-11-06 22:24:05.043722')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1002[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:24:05.050423', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:26:44.379027', '2022-11-06 22:26:44.379027')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 5[0m
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1155)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:26:44.394664', '2022-11-06 22:26:44.394664')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 5[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 410)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:26:44.413922', '2022-11-06 22:26:44.413922')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [ac4fee05-99dc-4a98-b7da-c1e9f5027cd3] Performing UpdateTitleJob (Job ID: ac4fee05-99dc-4a98-b7da-c1e9f5027cd3) from Resque(default) enqueued at  with arguments: 1005
+[ActiveJob] [UpdateTitleJob] [ac4fee05-99dc-4a98-b7da-c1e9f5027cd3]   [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1005 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [ac4fee05-99dc-4a98-b7da-c1e9f5027cd3]   [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [ac4fee05-99dc-4a98-b7da-c1e9f5027cd3]   [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:26:44.417877' WHERE `short_urls`.`id` = 1005[0m
+[ActiveJob] [UpdateTitleJob] [ac4fee05-99dc-4a98-b7da-c1e9f5027cd3]   [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [ac4fee05-99dc-4a98-b7da-c1e9f5027cd3] Performed UpdateTitleJob (Job ID: ac4fee05-99dc-4a98-b7da-c1e9f5027cd3) from Resque(default) in 6.35ms
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.423712', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1005[0m
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 15ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 2180)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 625)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:26:44.455591', '2022-11-06 22:26:44.455591')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.459308', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1006[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:26:44.465013' WHERE `short_urls`.`id` = 1006[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms | Allocations: 839)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:26:44.474845', '2022-11-06 22:26:44.474845')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 242)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:26:44.483662', '2022-11-06 22:26:44.483662')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1008 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.493883', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1008[0m
+  [1m[35m (1.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:26:44.499855' WHERE `short_urls`.`id` = 1008[0m
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 7ms (ActiveRecord: 2.7ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1008 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.511246', '2022-11-06 22:26:44.511246')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 52653bef-6483-488f-8a23-4b83621b167e) to Test(default) with arguments: 1009
+[ActiveJob] [UpdateTitleJob] [52653bef-6483-488f-8a23-4b83621b167e] Performing UpdateTitleJob (Job ID: 52653bef-6483-488f-8a23-4b83621b167e) from Test(default) enqueued at 2022-11-06T22:26:44Z with arguments: 1009
+[ActiveJob] [UpdateTitleJob] [52653bef-6483-488f-8a23-4b83621b167e]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1009 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [52653bef-6483-488f-8a23-4b83621b167e]   [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [52653bef-6483-488f-8a23-4b83621b167e]   [1m[36mShortUrl Update (1.1ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:26:44.517495' WHERE `short_urls`.`id` = 1009[0m
+[ActiveJob] [UpdateTitleJob] [52653bef-6483-488f-8a23-4b83621b167e]   [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [52653bef-6483-488f-8a23-4b83621b167e] Performed UpdateTitleJob (Job ID: 52653bef-6483-488f-8a23-4b83621b167e) from Test(default) in 7.52ms
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1009 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.528829', '2022-11-06 22:26:44.528829')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (1.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.550453', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1010[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.563230', '2022-11-06 22:26:44.563230')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.566043', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1011[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (1.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.571575', '2022-11-06 22:26:44.571575')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.591056', '2022-11-06 22:26:44.591056')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:26:44.593187' WHERE `short_urls`.`id` = 1013[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.596937', '2022-11-06 22:26:44.596937')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1014[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.600240', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:26:44.605397', '2022-11-06 22:26:44.605397')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1015[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:26:44.609280', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:31:38.416869', '2022-11-06 22:31:38.416869')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 1155)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:31:38.433441', '2022-11-06 22:31:38.433441')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 410)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:31:38.452359', '2022-11-06 22:31:38.452359')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [d883329e-1f0e-4943-be2b-dde3783020e8] Performing UpdateTitleJob (Job ID: d883329e-1f0e-4943-be2b-dde3783020e8) from Resque(default) enqueued at  with arguments: 1018
+[ActiveJob] [UpdateTitleJob] [d883329e-1f0e-4943-be2b-dde3783020e8]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1018 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [d883329e-1f0e-4943-be2b-dde3783020e8]   [1m[35m (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [d883329e-1f0e-4943-be2b-dde3783020e8]   [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:31:38.458363' WHERE `short_urls`.`id` = 1018[0m
+[ActiveJob] [UpdateTitleJob] [d883329e-1f0e-4943-be2b-dde3783020e8]   [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [d883329e-1f0e-4943-be2b-dde3783020e8] Performed UpdateTitleJob (Job ID: d883329e-1f0e-4943-be2b-dde3783020e8) from Resque(default) in 6.03ms
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.464777', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1018[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 17ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 2199)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 625)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:31:38.495284', '2022-11-06 22:31:38.495284')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.499106', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1019[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:31:38.506407' WHERE `short_urls`.`id` = 1019[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms | Allocations: 839)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:31:38.513931', '2022-11-06 22:31:38.513931')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 242)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:31:38.531440', '2022-11-06 22:31:38.531440')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1021 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.536267', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1021[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.9ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:31:38.541517' WHERE `short_urls`.`id` = 1021[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1021 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.548650', '2022-11-06 22:31:38.548650')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: b561f613-562e-4060-8f76-bf5b10f969da) to Test(default) with arguments: 1022
+[ActiveJob] [UpdateTitleJob] [b561f613-562e-4060-8f76-bf5b10f969da] Performing UpdateTitleJob (Job ID: b561f613-562e-4060-8f76-bf5b10f969da) from Test(default) enqueued at 2022-11-06T22:31:38Z with arguments: 1022
+[ActiveJob] [UpdateTitleJob] [b561f613-562e-4060-8f76-bf5b10f969da]   [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1022 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [b561f613-562e-4060-8f76-bf5b10f969da]   [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [b561f613-562e-4060-8f76-bf5b10f969da]   [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:31:38.552791' WHERE `short_urls`.`id` = 1022[0m
+[ActiveJob] [UpdateTitleJob] [b561f613-562e-4060-8f76-bf5b10f969da]   [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [b561f613-562e-4060-8f76-bf5b10f969da] Performed UpdateTitleJob (Job ID: b561f613-562e-4060-8f76-bf5b10f969da) from Test(default) in 3.76ms
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1022 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.560000', '2022-11-06 22:31:38.560000')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.562792', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1023[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.574080', '2022-11-06 22:31:38.574080')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.576644', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1024[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.580177', '2022-11-06 22:31:38.580177')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.583925', '2022-11-06 22:31:38.583925')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:31:38.585803' WHERE `short_urls`.`id` = 1026[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.9ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.590285', '2022-11-06 22:31:38.590285')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1027[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.595375', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:31:38.598660', '2022-11-06 22:31:38.598660')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1028[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:31:38.602292', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:41:26.336766', '2022-11-06 22:41:26.336766')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 1155)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:41:26.349585', '2022-11-06 22:41:26.349585')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 410)
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:41:26.381730', '2022-11-06 22:41:26.381730')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [b960311c-1d16-41e4-8b5a-b23b8d85a5c1] Performing UpdateTitleJob (Job ID: b960311c-1d16-41e4-8b5a-b23b8d85a5c1) from Resque(default) enqueued at  with arguments: 1031
+[ActiveJob] [UpdateTitleJob] [b960311c-1d16-41e4-8b5a-b23b8d85a5c1]   [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1031 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [b960311c-1d16-41e4-8b5a-b23b8d85a5c1]   [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [b960311c-1d16-41e4-8b5a-b23b8d85a5c1]   [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:41:26.385855' WHERE `short_urls`.`id` = 1031[0m
+[ActiveJob] [UpdateTitleJob] [b960311c-1d16-41e4-8b5a-b23b8d85a5c1]   [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [b960311c-1d16-41e4-8b5a-b23b8d85a5c1] Performed UpdateTitleJob (Job ID: b960311c-1d16-41e4-8b5a-b23b8d85a5c1) from Resque(default) in 3.61ms
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.390201', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1031[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 13ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 2269)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 625)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.7ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:41:26.404691', '2022-11-06 22:41:26.404691')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (1.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.409446', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1032[0m
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (1.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (4.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:41:26.434598' WHERE `short_urls`.`id` = 1032[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 18ms (ActiveRecord: 8.0ms | Allocations: 827)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.8ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:41:26.449805', '2022-11-06 22:41:26.449805')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 1ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 242)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.7ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:41:26.472454', '2022-11-06 22:41:26.472454')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1034 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.478040', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1034[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:41:26.481473' WHERE `short_urls`.`id` = 1034[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1034 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.487092', '2022-11-06 22:41:26.487092')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 5f8ebf04-768a-464c-9dd7-c4a88a40fe59) to Test(default) with arguments: 1035
+[ActiveJob] [UpdateTitleJob] [5f8ebf04-768a-464c-9dd7-c4a88a40fe59] Performing UpdateTitleJob (Job ID: 5f8ebf04-768a-464c-9dd7-c4a88a40fe59) from Test(default) enqueued at 2022-11-06T22:41:26Z with arguments: 1035
+[ActiveJob] [UpdateTitleJob] [5f8ebf04-768a-464c-9dd7-c4a88a40fe59]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1035 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [5f8ebf04-768a-464c-9dd7-c4a88a40fe59]   [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [5f8ebf04-768a-464c-9dd7-c4a88a40fe59]   [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:41:26.492116' WHERE `short_urls`.`id` = 1035[0m
+[ActiveJob] [UpdateTitleJob] [5f8ebf04-768a-464c-9dd7-c4a88a40fe59]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [5f8ebf04-768a-464c-9dd7-c4a88a40fe59] Performed UpdateTitleJob (Job ID: 5f8ebf04-768a-464c-9dd7-c4a88a40fe59) from Test(default) in 3.76ms
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1035 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.498528', '2022-11-06 22:41:26.498528')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.501184', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1036[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.513778', '2022-11-06 22:41:26.513778')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.517287', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1037[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.520623', '2022-11-06 22:41:26.520623')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.525543', '2022-11-06 22:41:26.525543')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:41:26.527590' WHERE `short_urls`.`id` = 1039[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.532413', '2022-11-06 22:41:26.532413')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1040[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.535850', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:41:26.540366', '2022-11-06 22:41:26.540366')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1041[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:41:26.544007', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:42:25.748514', '2022-11-06 22:42:25.748514')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1150)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:42:25.761404', '2022-11-06 22:42:25.761404')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 405)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 11[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 11[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 11[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:42:25.794684', '2022-11-06 22:42:25.794684')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [1f50ee63-9f5c-499e-8f94-e0bc9f0bba86] Performing UpdateTitleJob (Job ID: 1f50ee63-9f5c-499e-8f94-e0bc9f0bba86) from Resque(default) enqueued at  with arguments: 1044
+[ActiveJob] [UpdateTitleJob] [1f50ee63-9f5c-499e-8f94-e0bc9f0bba86]   [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1044 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [1f50ee63-9f5c-499e-8f94-e0bc9f0bba86]   [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [1f50ee63-9f5c-499e-8f94-e0bc9f0bba86]   [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:42:25.800555' WHERE `short_urls`.`id` = 1044[0m
+[ActiveJob] [UpdateTitleJob] [1f50ee63-9f5c-499e-8f94-e0bc9f0bba86]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [1f50ee63-9f5c-499e-8f94-e0bc9f0bba86] Performed UpdateTitleJob (Job ID: 1f50ee63-9f5c-499e-8f94-e0bc9f0bba86) from Resque(default) in 4.4ms
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.804116', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1044[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 16ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 2269)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (1.9ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 12ms (Views: 1.9ms | ActiveRecord: 1.9ms | Allocations: 625)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:42:25.846415', '2022-11-06 22:42:25.846415')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (1.0ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.850987', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1045[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:42:25.858440' WHERE `short_urls`.`id` = 1045[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms | Allocations: 827)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:42:25.867149', '2022-11-06 22:42:25.867149')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 2ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 240)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:42:25.892845', '2022-11-06 22:42:25.892845')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1047 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.897937', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1047[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:42:25.901493' WHERE `short_urls`.`id` = 1047[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1047 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.909437', '2022-11-06 22:42:25.909437')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 85174a58-1a61-4eb7-87f8-4c1c603be49b) to Test(default) with arguments: 1048
+[ActiveJob] [UpdateTitleJob] [85174a58-1a61-4eb7-87f8-4c1c603be49b] Performing UpdateTitleJob (Job ID: 85174a58-1a61-4eb7-87f8-4c1c603be49b) from Test(default) enqueued at 2022-11-06T22:42:25Z with arguments: 1048
+[ActiveJob] [UpdateTitleJob] [85174a58-1a61-4eb7-87f8-4c1c603be49b]   [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1048 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [85174a58-1a61-4eb7-87f8-4c1c603be49b]   [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [85174a58-1a61-4eb7-87f8-4c1c603be49b]   [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:42:25.915195' WHERE `short_urls`.`id` = 1048[0m
+[ActiveJob] [UpdateTitleJob] [85174a58-1a61-4eb7-87f8-4c1c603be49b]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [85174a58-1a61-4eb7-87f8-4c1c603be49b] Performed UpdateTitleJob (Job ID: 85174a58-1a61-4eb7-87f8-4c1c603be49b) from Test(default) in 4.22ms
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1048 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.920948', '2022-11-06 22:42:25.920948')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.926551', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1049[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.941280', '2022-11-06 22:42:25.941280')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.944483', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1050[0m
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.950743', '2022-11-06 22:42:25.950743')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.954132', '2022-11-06 22:42:25.954132')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:42:25.956841' WHERE `short_urls`.`id` = 1052[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.960474', '2022-11-06 22:42:25.960474')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (1.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1053[0m
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.970440', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:42:25.975887', '2022-11-06 22:42:25.975887')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1054[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:42:25.980283', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:48:17.880533', '2022-11-06 22:48:17.880533')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1132)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:48:17.889147', '2022-11-06 22:48:17.889147')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 387)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:48:17.900120', '2022-11-06 22:48:17.900120')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [0d7cba09-25db-45ee-8c8d-efc714e10c7a] Performing UpdateTitleJob (Job ID: 0d7cba09-25db-45ee-8c8d-efc714e10c7a) from Resque(default) enqueued at  with arguments: 1057
+[ActiveJob] [UpdateTitleJob] [0d7cba09-25db-45ee-8c8d-efc714e10c7a]   [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1057 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [0d7cba09-25db-45ee-8c8d-efc714e10c7a]   [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [0d7cba09-25db-45ee-8c8d-efc714e10c7a]   [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:48:17.905082' WHERE `short_urls`.`id` = 1057[0m
+[ActiveJob] [UpdateTitleJob] [0d7cba09-25db-45ee-8c8d-efc714e10c7a]   [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [0d7cba09-25db-45ee-8c8d-efc714e10c7a] Performed UpdateTitleJob (Job ID: 0d7cba09-25db-45ee-8c8d-efc714e10c7a) from Resque(default) in 5.3ms
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:17.909084', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1057[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 12ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 2181)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 625)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:48:17.928329', '2022-11-06 22:48:17.928329')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:17.931544', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1058[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (1.1ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:48:17.935950' WHERE `short_urls`.`id` = 1058[0m
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms | Allocations: 839)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:48:17.944114', '2022-11-06 22:48:17.944114')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 242)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:48:17.950300', '2022-11-06 22:48:17.950300')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1060 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:17.955492', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1060[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:48:17.959777' WHERE `short_urls`.`id` = 1060[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1060 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:17.965271', '2022-11-06 22:48:17.965271')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: c3827368-942d-43af-90f5-eab0646c3e18) to Test(default) with arguments: 1061
+[ActiveJob] [UpdateTitleJob] [c3827368-942d-43af-90f5-eab0646c3e18] Performing UpdateTitleJob (Job ID: c3827368-942d-43af-90f5-eab0646c3e18) from Test(default) enqueued at 2022-11-06T22:48:17Z with arguments: 1061
+[ActiveJob] [UpdateTitleJob] [c3827368-942d-43af-90f5-eab0646c3e18]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1061 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [c3827368-942d-43af-90f5-eab0646c3e18]   [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [c3827368-942d-43af-90f5-eab0646c3e18]   [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:48:17.970162' WHERE `short_urls`.`id` = 1061[0m
+[ActiveJob] [UpdateTitleJob] [c3827368-942d-43af-90f5-eab0646c3e18]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [c3827368-942d-43af-90f5-eab0646c3e18] Performed UpdateTitleJob (Job ID: c3827368-942d-43af-90f5-eab0646c3e18) from Test(default) in 13.6ms
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1061 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:17.985955', '2022-11-06 22:48:17.985955')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:17.990046', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1062[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:18.008175', '2022-11-06 22:48:18.008175')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (9.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:18.012741', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1063[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:18.027270', '2022-11-06 22:48:18.027270')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:18.032087', '2022-11-06 22:48:18.032087')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:48:18.034220' WHERE `short_urls`.`id` = 1065[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:18.038832', '2022-11-06 22:48:18.038832')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1066[0m
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.8ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:18.042996', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:48:18.048032', '2022-11-06 22:48:18.048032')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1067[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:48:18.051903', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:54:59.771467', '2022-11-06 22:54:59.771467')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 1132)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:54:59.785889', '2022-11-06 22:54:59.785889')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 387)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:54:59.804199', '2022-11-06 22:54:59.804199')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [8a1e65ef-6103-43f1-b7d1-a685a87cdd65] Performing UpdateTitleJob (Job ID: 8a1e65ef-6103-43f1-b7d1-a685a87cdd65) from Resque(default) enqueued at  with arguments: 1070
+[ActiveJob] [UpdateTitleJob] [8a1e65ef-6103-43f1-b7d1-a685a87cdd65]   [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1070 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [8a1e65ef-6103-43f1-b7d1-a685a87cdd65]   [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [8a1e65ef-6103-43f1-b7d1-a685a87cdd65]   [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:54:59.810625' WHERE `short_urls`.`id` = 1070[0m
+[ActiveJob] [UpdateTitleJob] [8a1e65ef-6103-43f1-b7d1-a685a87cdd65]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [8a1e65ef-6103-43f1-b7d1-a685a87cdd65] Performed UpdateTitleJob (Job ID: 8a1e65ef-6103-43f1-b7d1-a685a87cdd65) from Resque(default) in 4.76ms
+  [1m[36mShortUrl Load (1.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.814287', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1070[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 15ms (Views: 1.0ms | ActiveRecord: 5.1ms | Allocations: 2200)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:54:59.840188', '2022-11-06 22:54:59.840188')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (1.2ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.845914', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1071[0m
+  [1m[35m (1.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (6.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:54:59.862056' WHERE `short_urls`.`id` = 1071[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 14ms (ActiveRecord: 7.6ms | Allocations: 820)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:54:59.869896', '2022-11-06 22:54:59.869896')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (1.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 242)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:54:59.902804', '2022-11-06 22:54:59.902804')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1073 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.909118', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1073[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:54:59.915573' WHERE `short_urls`.`id` = 1073[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1073 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.924076', '2022-11-06 22:54:59.924076')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 181bc9b2-61da-4bdc-9ba8-83dc7db962ef) to Test(default) with arguments: 1074
+[ActiveJob] [UpdateTitleJob] [181bc9b2-61da-4bdc-9ba8-83dc7db962ef] Performing UpdateTitleJob (Job ID: 181bc9b2-61da-4bdc-9ba8-83dc7db962ef) from Test(default) enqueued at 2022-11-06T22:54:59Z with arguments: 1074
+[ActiveJob] [UpdateTitleJob] [181bc9b2-61da-4bdc-9ba8-83dc7db962ef]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1074 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [181bc9b2-61da-4bdc-9ba8-83dc7db962ef]   [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [181bc9b2-61da-4bdc-9ba8-83dc7db962ef]   [1m[36mShortUrl Update (0.8ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:54:59.928270' WHERE `short_urls`.`id` = 1074[0m
+[ActiveJob] [UpdateTitleJob] [181bc9b2-61da-4bdc-9ba8-83dc7db962ef]   [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [181bc9b2-61da-4bdc-9ba8-83dc7db962ef] Performed UpdateTitleJob (Job ID: 181bc9b2-61da-4bdc-9ba8-83dc7db962ef) from Test(default) in 5.0ms
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1074 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.934991', '2022-11-06 22:54:59.934991')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.938504', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1075[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.951082', '2022-11-06 22:54:59.951082')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.954096', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1076[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.957651', '2022-11-06 22:54:59.957651')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.962420', '2022-11-06 22:54:59.962420')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:54:59.964441' WHERE `short_urls`.`id` = 1078[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.967844', '2022-11-06 22:54:59.967844')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1079[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.971636', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:54:59.975254', '2022-11-06 22:54:59.975254')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1080[0m
+  [1m[36mShortUrl Load (0.2ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:54:59.979246', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (1.1ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:56:19.562088', '2022-11-06 22:56:19.562088')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1132)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:56:19.575029', '2022-11-06 22:56:19.575029')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#index as JSON
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 387)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://www.test.rspec"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.test.rspec' LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:56:19.594582', '2022-11-06 22:56:19.594582')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [ef02f9ce-a8b9-487c-b901-20af84beddcc] Performing UpdateTitleJob (Job ID: ef02f9ce-a8b9-487c-b901-20af84beddcc) from Resque(default) enqueued at  with arguments: 1083
+[ActiveJob] [UpdateTitleJob] [ef02f9ce-a8b9-487c-b901-20af84beddcc]   [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1083 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [ef02f9ce-a8b9-487c-b901-20af84beddcc]   [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [ef02f9ce-a8b9-487c-b901-20af84beddcc]   [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.test.rspec', `short_urls`.`updated_at` = '2022-11-06 22:56:19.599888' WHERE `short_urls`.`id` = 1083[0m
+[ActiveJob] [UpdateTitleJob] [ef02f9ce-a8b9-487c-b901-20af84beddcc]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [ef02f9ce-a8b9-487c-b901-20af84beddcc] Performed UpdateTitleJob (Job ID: ef02f9ce-a8b9-487c-b901-20af84beddcc) from Resque(default) in 3.58ms
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.603281', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1083[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 13ms (Views: 0.1ms | ActiveRecord: 4.6ms | Allocations: 2200)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"nope!"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'nope!' LIMIT 1[0m
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:56:19.629069', '2022-11-06 22:56:19.629069')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.633181', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1084[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:56:19.638668' WHERE `short_urls`.`id` = 1084[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms | Allocations: 839)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:56:19.647249', '2022-11-06 22:56:19.647249')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"nope"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'nope' LIMIT 1[0m
+Completed 404 Not Found in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 242)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.test.rspec', '2022-11-06 22:56:19.655197', '2022-11-06 22:56:19.655197')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1086 LIMIT 1[0m
+  [1m[36mShortUrl Load (0.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.662072', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1086[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ShortUrlsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '1' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-06 22:56:19.667470' WHERE `short_urls`.`id` = 1086[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to https://www.test.rspec
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms | Allocations: 675)
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1086 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.676482', '2022-11-06 22:56:19.676482')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 84e9454a-f532-45bd-91bc-e81b030bd828) to Test(default) with arguments: 1087
+[ActiveJob] [UpdateTitleJob] [84e9454a-f532-45bd-91bc-e81b030bd828] Performing UpdateTitleJob (Job ID: 84e9454a-f532-45bd-91bc-e81b030bd828) from Test(default) enqueued at 2022-11-06T22:56:19Z with arguments: 1087
+[ActiveJob] [UpdateTitleJob] [84e9454a-f532-45bd-91bc-e81b030bd828]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1087 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [84e9454a-f532-45bd-91bc-e81b030bd828]   [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [84e9454a-f532-45bd-91bc-e81b030bd828]   [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:56:19.683979' WHERE `short_urls`.`id` = 1087[0m
+[ActiveJob] [UpdateTitleJob] [84e9454a-f532-45bd-91bc-e81b030bd828]   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] [UpdateTitleJob] [84e9454a-f532-45bd-91bc-e81b030bd828] Performed UpdateTitleJob (Job ID: 84e9454a-f532-45bd-91bc-e81b030bd828) from Test(default) in 5.38ms
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1087 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.691337', '2022-11-06 22:56:19.691337')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.710666', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1088[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.723533', '2022-11-06 22:56:19.723533')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.726793', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1089[0m
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.731579', '2022-11-06 22:56:19.731579')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.4ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.734921', '2022-11-06 22:56:19.734921')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'www.beenverified.com', `short_urls`.`updated_at` = '2022-11-06 22:56:19.737064' WHERE `short_urls`.`id` = 1091[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.6ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.741295', '2022-11-06 22:56:19.741295')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 1001 WHERE `short_urls`.`id` = 1092[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.746245', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1001[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Create (0.3ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.beenverified.com/faq/', '2022-11-06 22:56:19.750005', '2022-11-06 22:56:19.750005')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.4ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`id` = 50 WHERE `short_urls`.`id` = 1093[0m
+  [1m[36mShortUrl Load (0.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShortUrl Update (0.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-06 22:56:19.753394', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 50[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
