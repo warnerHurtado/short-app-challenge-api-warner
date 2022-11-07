@@ -5,7 +5,7 @@ class ShortUrl < ApplicationRecord
   validate :validate_full_url
 
   def short_code
-    number = ShortUrl.all.length
+    number = self.id
     url_code = ""
 
     while number > 0
