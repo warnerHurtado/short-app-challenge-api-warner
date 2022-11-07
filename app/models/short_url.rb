@@ -5,6 +5,8 @@ class ShortUrl < ApplicationRecord
   validate :validate_full_url
 
   def short_code
+    return nil if self.id.nil?
+    
     number = self.id
     url_code = ""
 
