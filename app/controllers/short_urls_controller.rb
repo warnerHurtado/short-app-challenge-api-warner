@@ -4,8 +4,8 @@ class ShortUrlsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    urls = ShortUrl.limit( 5 ).order('click_count desc')
-    render status: 200, json: { urls: [urls] }
+    urls = ShortUrl.limit( 100 ).order('click_count desc').map { |short_code| short_code.short_code }
+    render status: 200, json: { urls: urls }
   end
 
   def create

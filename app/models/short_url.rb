@@ -19,6 +19,10 @@ class ShortUrl < ApplicationRecord
     url_code
   end
 
+  def public_attributes
+    self.short_code
+  end
+
   def update_title!
     new_title = full_url.split("//")[1].split('/')[0]
     self.title = new_title
