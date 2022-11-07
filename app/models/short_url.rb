@@ -39,10 +39,13 @@ class ShortUrl < ApplicationRecord
   end
 
   def validate_full_url
+
     is_correct_url = is_valid_url?
     
     if !is_correct_url
+      errors.add( :errors, "Full url is not a valid url")
       errors.add( :full_url, "is not a valid url" )
+      !full_url && errors.add( :full_url, "can't be blank" )
     end
   end
 
