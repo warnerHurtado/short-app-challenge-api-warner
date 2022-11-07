@@ -3,11 +3,13 @@ class ShortUrlsController < ApplicationController
   # Since we're working on an API, we don't have authenticity tokens
   skip_before_action :verify_authenticity_token
 
+  #Get a top of 100 with more clicks
   def index
     urls = ShortUrl.limit( 100 ).order('click_count desc').map { |short_code| short_code.short_code }
     render status: 200, json: { urls: urls }
   end
 
+  #Create a new short URL
   def create
     url = ShortUrl.find_by( full_url: params[:full_url] )
 
@@ -25,6 +27,7 @@ class ShortUrlsController < ApplicationController
     end
   end
 
+  #Go to the link that you send by short code
   def show
     url_code = ShortUrl.find_by( url_code: params[:id] )
     

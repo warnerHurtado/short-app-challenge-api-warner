@@ -3048,3 +3048,557 @@ Processing by ShortUrlsController#index as HTML
 Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 1898)
 
 
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:01:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (2.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 5.5ms | Allocations: 9463)
+
+
+  
+NoMethodError (undefined method `url_code=' for #<ShortUrl:0x000055b846576670>):
+  
+app/models/short_url.rb:20:in `short_code'
+app/controllers/short_urls_controller.rb:8:in `block in index'
+app/controllers/short_urls_controller.rb:8:in `map'
+app/controllers/short_urls_controller.rb:8:in `index'
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:01:55 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms | Allocations: 3703)
+
+
+  
+NoMethodError (undefined method `url_code=' for #<ShortUrl:0x00007f54fc0398e8>):
+  
+app/models/short_url.rb:20:in `short_code'
+app/controllers/short_urls_controller.rb:8:in `block in index'
+app/controllers/short_urls_controller.rb:8:in `map'
+app/controllers/short_urls_controller.rb:8:in `index'
+Started GET "/d" for 172.20.0.1 at 2022-11-07 05:02:49 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"d"}
+  [1m[36mShortUrl Load (2.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'd' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:32:in `show'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.1ms | Allocations: 4368)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'short_urls.url_code' in 'where clause'):
+  
+app/controllers/short_urls_controller.rb:32:in `show'
+Started GET "/d" for 172.20.0.1 at 2022-11-07 05:03:47 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"d"}
+  [1m[36mShortUrl Load (1.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = 'd' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:32:in `show'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.7ms | Allocations: 1876)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'short_urls.url_code' in 'where clause'):
+  
+app/controllers/short_urls_controller.rb:32:in `show'
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:04:13 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.4ms | Allocations: 3642)
+
+
+  
+NoMethodError (undefined method `url_code=' for #<ShortUrl:0x00007f54f12ea318>):
+  
+app/models/short_url.rb:20:in `short_code'
+app/controllers/short_urls_controller.rb:8:in `block in index'
+app/controllers/short_urls_controller.rb:8:in `map'
+app/controllers/short_urls_controller.rb:8:in `index'
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:05:36 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.3ms | Allocations: 9461)
+
+
+  
+NoMethodError (undefined method `url_code=' for #<ShortUrl:0x000055bd4ebd1cd8>):
+  
+app/models/short_url.rb:20:in `short_code'
+app/controllers/short_urls_controller.rb:8:in `block in index'
+app/controllers/short_urls_controller.rb:8:in `map'
+app/controllers/short_urls_controller.rb:8:in `index'
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:05:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.8ms | Allocations: 3703)
+
+
+  
+NoMethodError (undefined method `url_code=' for #<ShortUrl:0x000055bd4f096548>):
+  
+app/models/short_url.rb:20:in `short_code'
+app/controllers/short_urls_controller.rb:8:in `block in index'
+app/controllers/short_urls_controller.rb:8:in `map'
+app/controllers/short_urls_controller.rb:8:in `index'
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-07 05:06:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (3.2ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.2ms | Allocations: 3627)
+
+
+  
+NoMethodError (undefined method `url_code=' for #<ShortUrl:0x00007f8e354f4208>):
+  
+app/models/short_url.rb:20:in `short_code'
+app/controllers/short_urls_controller.rb:17:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('1889412250694455305', 0)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateShortUrls (20190923133432)
+  [1m[35m (19.3ms)[0m  [1m[35mCREATE TABLE `short_urls` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `full_url` varchar(255), `title` varchar(255), `click_count` int DEFAULT 0, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_short_urls_on_full_url`  (`full_url`))[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20190923133432')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUrlcodeToShortUrls (20221104222226)
+  [1m[35m (22.4ms)[0m  [1m[35mALTER TABLE `short_urls` ADD `url_code` varchar(255)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20221104222226')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2022-11-07 05:16:18.619740', '2022-11-07 05:16:18.619740')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('1889412250694455305')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:21:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 2467)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-07 05:25:12 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[36mShortUrl Create (1.0ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://google.com', '2022-11-07 05:25:12.545739', '2022-11-07 05:25:12.545739')[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+[ActiveJob] [UpdateTitleJob] [5f13a3bc-5508-47de-87a7-f9682c89d9ba] Performing UpdateTitleJob (Job ID: 5f13a3bc-5508-47de-87a7-f9682c89d9ba) from Resque(default) enqueued at  with arguments: 1
+[ActiveJob] [UpdateTitleJob] [5f13a3bc-5508-47de-87a7-f9682c89d9ba]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [5f13a3bc-5508-47de-87a7-f9682c89d9ba]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [5f13a3bc-5508-47de-87a7-f9682c89d9ba] Performed UpdateTitleJob (Job ID: 5f13a3bc-5508-47de-87a7-f9682c89d9ba) from Resque(default) in 291.0ms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[36mShortUrl Update (1.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-07 05:25:12.876948', `short_urls`.`url_code` = '1' WHERE `short_urls`.`id` = 1[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+Completed 201 Created in 372ms (Views: 0.3ms | ActiveRecord: 11.6ms | Allocations: 21681)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-07 05:25:19 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 958)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-07 05:25:23 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 946)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:25:26 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://google.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://google.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 961)
+
+
+Started POST "/short_urls.json" for 172.20.0.1 at 2022-11-07 05:25:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as JSON
+  Parameters: {"full_url"=>""}
+  [1m[36mShortUrl Load (1.3ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = '' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 400 Bad Request in 12ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1781)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:26:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://facebook.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://facebook.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://facebook.com', '2022-11-07 05:26:15.229663', '2022-11-07 05:26:15.229663')[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+[ActiveJob] [UpdateTitleJob] [da2e23c0-428e-4252-8d41-4694e605a491] Performing UpdateTitleJob (Job ID: da2e23c0-428e-4252-8d41-4694e605a491) from Resque(default) enqueued at  with arguments: 2
+[ActiveJob] [UpdateTitleJob] [da2e23c0-428e-4252-8d41-4694e605a491]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [da2e23c0-428e-4252-8d41-4694e605a491]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [da2e23c0-428e-4252-8d41-4694e605a491] Performed UpdateTitleJob (Job ID: da2e23c0-428e-4252-8d41-4694e605a491) from Resque(default) in 183.51ms
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-07 05:26:15.435814', `short_urls`.`url_code` = '2' WHERE `short_urls`.`id` = 2[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+Completed 201 Created in 229ms (Views: 0.2ms | ActiveRecord: 10.4ms | Allocations: 7752)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:26:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://youtube.com"}
+  [1m[36mShortUrl Load (2.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://youtube.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://youtube.com', '2022-11-07 05:26:29.212580', '2022-11-07 05:26:29.212580')[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+[ActiveJob] [UpdateTitleJob] [6894e1cd-738f-42b8-a119-66ebe75c2df2] Performing UpdateTitleJob (Job ID: 6894e1cd-738f-42b8-a119-66ebe75c2df2) from Resque(default) enqueued at  with arguments: 3
+[ActiveJob] [UpdateTitleJob] [6894e1cd-738f-42b8-a119-66ebe75c2df2]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 3 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [6894e1cd-738f-42b8-a119-66ebe75c2df2]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [6894e1cd-738f-42b8-a119-66ebe75c2df2] Performed UpdateTitleJob (Job ID: 6894e1cd-738f-42b8-a119-66ebe75c2df2) from Resque(default) in 295.63ms
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[36mShortUrl Update (0.8ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-07 05:26:29.524047', `short_urls`.`url_code` = '3' WHERE `short_urls`.`id` = 3[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+Completed 201 Created in 328ms (Views: 0.4ms | ActiveRecord: 12.2ms | Allocations: 11022)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:26:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1466)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:27:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+SyntaxError (/app/app/controllers/short_urls_controller.rb:8: syntax error, unexpected '}', expecting '.' or &. or :: or '['
+...de.title, short_code.full_url }
+...                              ^
+/app/app/controllers/short_urls_controller.rb:10: syntax error, unexpected end, expecting '}'
+  end
+  ^~~
+/app/app/controllers/short_urls_controller.rb:44: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/short_urls_controller.rb:8: syntax error, unexpected '}', expecting '.' or &. or :: or '['
+app/controllers/short_urls_controller.rb:10: syntax error, unexpected end, expecting '}'
+app/controllers/short_urls_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+app/controllers/short_urls_controller.rb:8: syntax error, unexpected '}', expecting '.' or &. or :: or '['
+app/controllers/short_urls_controller.rb:10: syntax error, unexpected end, expecting '}'
+app/controllers/short_urls_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+app/controllers/short_urls_controller.rb:8: syntax error, unexpected '}', expecting '.' or &. or :: or '['
+app/controllers/short_urls_controller.rb:10: syntax error, unexpected end, expecting '}'
+app/controllers/short_urls_controller.rb:44: syntax error, unexpected end-of-input, expecting end
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:28:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://youtube.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://youtube.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 6401)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:28:31 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.4ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 1.4ms | Allocations: 1413)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:30:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://instagram.com"}
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://instagram.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[36mShortUrl Create (0.5ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://instagram.com', '2022-11-07 05:30:51.946398', '2022-11-07 05:30:51.946398')[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: af70c497-167d-444c-b723-685acfe370e1) to Resque(default) with arguments: 4
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-07 05:30:51.957542', `short_urls`.`url_code` = '4' WHERE `short_urls`.`id` = 4[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+Completed 201 Created in 33ms (Views: 0.2ms | ActiveRecord: 9.4ms | Allocations: 12797)
+
+
+[ActiveJob] [UpdateTitleJob] [af70c497-167d-444c-b723-685acfe370e1] Performing UpdateTitleJob (Job ID: af70c497-167d-444c-b723-685acfe370e1) from Resque(default) enqueued at 2022-11-07T05:30:51Z with arguments: 4
+[ActiveJob] [UpdateTitleJob] [af70c497-167d-444c-b723-685acfe370e1]   [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+[ActiveJob] [UpdateTitleJob] [af70c497-167d-444c-b723-685acfe370e1]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [af70c497-167d-444c-b723-685acfe370e1]   [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 4 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [af70c497-167d-444c-b723-685acfe370e1]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [af70c497-167d-444c-b723-685acfe370e1] Performed UpdateTitleJob (Job ID: af70c497-167d-444c-b723-685acfe370e1) from Resque(default) in 263.16ms
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:32:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://instagram.com"}
+  [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://instagram.com' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 6394)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:32:34 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1536)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:33:14 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://www.coingecko.com/en/api/documentation"}
+  [1m[36mShortUrl Load (1.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.coingecko.com/en/api/documentation' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[36mShortUrl Create (1.8ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.coingecko.com/en/api/documentation', '2022-11-07 05:33:14.591479', '2022-11-07 05:33:14.591479')[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: f2c33500-e95b-4c95-a45f-6d3dacc4decb) to Resque(default) with arguments: 5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[36mShortUrl Update (0.5ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-07 05:33:14.613689', `short_urls`.`url_code` = '5' WHERE `short_urls`.`id` = 5[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+Completed 201 Created in 34ms (Views: 0.3ms | ActiveRecord: 8.0ms | Allocations: 8841)
+
+
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb] Performing UpdateTitleJob (Job ID: f2c33500-e95b-4c95-a45f-6d3dacc4decb) from Resque(default) enqueued at 2022-11-07T05:33:14Z with arguments: 5
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 5 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   ↳ app/models/short_url.rb:35:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'Crypto API Documentation | CoinGecko', `short_urls`.`updated_at` = '2022-11-07 05:33:15.489290' WHERE `short_urls`.`id` = 5[0m
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   ↳ app/models/short_url.rb:35:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb]   ↳ app/models/short_url.rb:35:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [f2c33500-e95b-4c95-a45f-6d3dacc4decb] Performed UpdateTitleJob (Job ID: f2c33500-e95b-4c95-a45f-6d3dacc4decb) from Resque(default) in 515.21ms
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:33:37 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 1672)
+
+
+Started POST "/short_urls.jsonclear" for 172.20.0.1 at 2022-11-07 05:35:35 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#create as 
+  Parameters: {"full_url"=>"https://www.neighborwho.com/lp/ec88b4/2/loading"}
+  [1m[36mShortUrl Load (1.1ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`full_url` = 'https://www.neighborwho.com/lp/ec88b4/2/loading' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[36mShortUrl Create (0.8ms)[0m  [1m[32mINSERT INTO `short_urls` (`full_url`, `created_at`, `updated_at`) VALUES ('https://www.neighborwho.com/lp/ec88b4/2/loading', '2022-11-07 05:35:35.808460', '2022-11-07 05:35:35.808460')[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:19:in `create'
+[ActiveJob] Enqueued UpdateTitleJob (Job ID: 57db8e60-ebd0-480e-b280-0f3effb0aeae) to Resque(default) with arguments: 6
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`updated_at` = '2022-11-07 05:35:35.822254', `short_urls`.`url_code` = '6' WHERE `short_urls`.`id` = 6[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/short_url.rb:21:in `short_code'
+Completed 201 Created in 26ms (Views: 0.3ms | ActiveRecord: 10.0ms | Allocations: 6549)
+
+
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae] Performing UpdateTitleJob (Job ID: 57db8e60-ebd0-480e-b280-0f3effb0aeae) from Resque(default) enqueued at 2022-11-07T05:35:35Z with arguments: 6
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   [1m[36mShortUrl Load (0.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`id` = 6 LIMIT 1[0m
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   ↳ app/jobs/update_title_job.rb:6:in `perform'
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   ↳ app/models/short_url.rb:35:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   [1m[36mShortUrl Update (0.6ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`title` = 'Generating Report | NeighborWho', `short_urls`.`updated_at` = '2022-11-07 05:35:41.337543' WHERE `short_urls`.`id` = 6[0m
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   ↳ app/models/short_url.rb:35:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae]   ↳ app/models/short_url.rb:35:in `update_title!'
+[ActiveJob] [UpdateTitleJob] [57db8e60-ebd0-480e-b280-0f3effb0aeae] Performed UpdateTitleJob (Job ID: 57db8e60-ebd0-480e-b280-0f3effb0aeae) from Resque(default) in 441.62ms
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:35:45 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.0ms | Allocations: 1825)
+
+
+Started GET "/6" for 172.20.0.1 at 2022-11-07 05:36:00 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '6' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:32:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:36)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[36mShortUrl Update (1.3ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-07 05:36:00.782812' WHERE `short_urls`.`id` = 6[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[35m (38.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+Redirected to https://www.neighborwho.com/lp/ec88b4/2/loading
+Completed 302 Found in 53ms (ActiveRecord: 40.7ms | Allocations: 3736)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:36:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1815)
+
+
+Started GET "/6" for 172.20.0.1 at 2022-11-07 05:36:19 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '6' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:32:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:36)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[36mShortUrl Update (0.7ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 2, `short_urls`.`updated_at` = '2022-11-07 05:36:19.233333' WHERE `short_urls`.`id` = 6[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+Redirected to https://www.neighborwho.com/lp/ec88b4/2/loading
+Completed 302 Found in 14ms (ActiveRecord: 3.9ms | Allocations: 3576)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:36:27 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.0ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 1815)
+
+
+Started GET "/6" for 172.20.0.1 at 2022-11-07 05:36:32 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '6' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:32:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:36)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[36mShortUrl Update (0.8ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 3, `short_urls`.`updated_at` = '2022-11-07 05:36:32.046455' WHERE `short_urls`.`id` = 6[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+Redirected to https://www.neighborwho.com/lp/ec88b4/2/loading
+Completed 302 Found in 19ms (ActiveRecord: 4.7ms | Allocations: 3576)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:37:57 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (1.6ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.6ms | Allocations: 1815)
+
+
+Started GET "/5" for 172.20.0.1 at 2022-11-07 05:38:11 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShortUrl Load (0.7ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` WHERE `short_urls`.`url_code` = '5' LIMIT 1[0m
+  ↳ app/controllers/short_urls_controller.rb:32:in `show'
+DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from show at /app/app/controllers/short_urls_controller.rb:36)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[36mShortUrl Update (0.9ms)[0m  [1m[33mUPDATE `short_urls` SET `short_urls`.`click_count` = 1, `short_urls`.`updated_at` = '2022-11-07 05:38:11.505562' WHERE `short_urls`.`id` = 5[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/short_urls_controller.rb:36:in `show'
+Redirected to https://www.coingecko.com/en/api/documentation
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms | Allocations: 3557)
+
+
+Started GET "/" for 172.20.0.1 at 2022-11-07 05:38:18 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.5ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1815)
+
+
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('1889412250694455305', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('1889412250694455305')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 172.20.0.1 at 2022-11-07 06:19:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by ShortUrlsController#index as HTML
+  [1m[36mShortUrl Load (0.8ms)[0m  [1m[34mSELECT `short_urls`.* FROM `short_urls` ORDER BY click_count desc LIMIT 100[0m
+  ↳ app/controllers/short_urls_controller.rb:8:in `map'
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 7175)
+
+
