@@ -32,12 +32,16 @@ class ShortUrl < ApplicationRecord
       errors.add( :title, e)
   end
 
+  def self.find_by_short_code( short_code )
+    ShortUrl.find_by( url_code: short_code )
+  end
+
   private
 
   def is_valid_url?
     uri = URI.parse(full_url)
     uri.is_a?(URI::HTTP) && !uri.host.nil?
-    
+
   rescue URI::InvalidURIError
     false
   end
