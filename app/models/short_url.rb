@@ -24,9 +24,12 @@ class ShortUrl < ApplicationRecord
   end
 
   def update_title!
-    new_title = full_url.split("//")[1].split('/')[0]
+    new_title =  Net::HTTP.get( URI.parse(full_url) ).match(/<title.*?>(.*)<\/title>/)[1]
     self.title = new_title
     self.save
+      
+    rescue => e
+      errors.add( :title, e)
   end
 
   private
@@ -34,6 +37,7 @@ class ShortUrl < ApplicationRecord
   def is_valid_url?
     uri = URI.parse(full_url)
     uri.is_a?(URI::HTTP) && !uri.host.nil?
+    
   rescue URI::InvalidURIError
     false
   end
